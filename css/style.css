@@ -1,0 +1,182 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Staatliches', serif;
+    background-color: rgb(255, 251, 251);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.brand-logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+nav{
+    text-align: center;
+    padding: 10px 0;
+    max-width: 100%;
+}
+
+nav a{
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+    font-size: 1.2em;
+}
+
+section{
+    padding: 40px;
+    text-align: center;
+}
+
+section h2{
+    color: #333;
+    font-size: 2em;
+}
+
+section p{
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.card{
+    margin: 0 auto;
+    padding: 2em;
+    max-width: 650px;
+    background: #f0f0f0;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card::after, .card::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle),  #1e1c1f, #ece1e5 , #414243, #cabdc5);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 2s spin linear infinite;
+}
+
+.card::before{
+    filter: blur(1.3rem);
+    opacity: 0.5;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+.tour-gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 40px;
+    text-align: center;
+}
+
+.tour-gallery img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.tour-gallery img:hover{
+    transform: scale(1.05);
+}
+
+.contact-form{
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #333;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color: #544d4d;
+}
+
+.contact-form button{
+    background-color: #544d4d;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover{
+    background-color: #6f6666;
+}
+
+/*Responsive design*/
+@media (max-width: 600px){
+    .contact-form{
+        width: 90%;
+    }
+}
+
+footer{
+    margin-top: 10px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+}
