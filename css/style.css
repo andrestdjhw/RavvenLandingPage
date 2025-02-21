@@ -10,13 +10,6 @@ body{
     padding: 0;
 }
 
-header{
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
 .brand-logo{
     width: 50px;
     height: 50px;
@@ -27,16 +20,43 @@ header{
 }
 
 nav{
-    text-align: center;
-    padding: 10px 0;
+    box-shadow: 2px 2px 5px #000;
+    opacity: 1;
+    display:flex ;
+    height: 60px;
     max-width: 100%;
+    background-color: #333;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
 }
 
-nav a{
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+nav ul li{
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: #f2f2f2;
     text-decoration: none;
-    color: #fff;
-    margin: 0 15px;
-    font-size: 1.2em;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in;
+}
+
+nav ul li a:hover{
+    color: #333;
+    background: #fff;
 }
 
 section{
@@ -58,7 +78,7 @@ section p{
     margin: 0 auto;
     padding: 2em;
     max-width: 650px;
-    background: #f0f0f0;
+    background-color: rgb(255, 251, 251);
     text-align: center;
     border-radius: 10px;
     position: relative;
@@ -75,14 +95,14 @@ section p{
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: conic-gradient(from var(--angle),  #1e1c1f, #ece1e5 , #414243, #cabdc5);
+    background-image: conic-gradient(from var(--angle), transparent 2%, rgb(0, 0, 0));
     top: 50%;
     left: 50%;
     translate: -50% -50%;
     z-index: -1;
     padding: 3px;
     border-radius: 10px;
-    animation: 2s spin linear infinite;
+    animation: 8s spin linear infinite;
 }
 
 .card::before{
