@@ -74,6 +74,69 @@ section p{
     margin: 20px 0;
 }
 
+.container {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        30deg,
+        #111111 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #111111 87.5%,
+        #111111
+      ),
+      linear-gradient(
+        150deg,
+        #111111 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #111111 87.5%,
+        #111111
+      ),
+      linear-gradient(
+        30deg,
+        #111111 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #111111 87.5%,
+        #111111
+      ),
+      linear-gradient(
+        150deg,
+        #111111 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #111111 87.5%,
+        #111111
+      ),
+      linear-gradient(
+        60deg,
+        #77777777 25%,
+        transparent 25.5%,
+        transparent 75%,
+        #77777777 75%,
+        #77777777
+      ),
+      linear-gradient(
+        60deg,
+        #77777777 25%,
+        transparent 25.5%,
+        transparent 75%,
+        #77777777 75%,
+        #77777777
+      );
+    background-position:
+      0 0,
+      0 0,
+      40px 70px,
+      40px 70px,
+      0 0,
+      40px 70px;
+    background-color: #000000;
+    background-size: 80px 140px;
+    box-shadow: inset 0 0 100px rgba(255, 215, 0, 0.1);
+  }
+
 .card{
     margin: 0 auto;
     padding: 2em;
@@ -95,7 +158,7 @@ section p{
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: conic-gradient(from var(--angle), transparent 2%, rgb(0, 0, 0));
+    background-image: conic-gradient(from var(--angle), transparent 2%, rgba(14, 13, 13, 0.76));
     top: 50%;
     left: 50%;
     translate: -50% -50%;
@@ -118,6 +181,79 @@ section p{
         --angle: 360deg;
     }
 }
+
+.loader {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border: 4px solid #282828;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.1),
+      10px 10px 10px rgba(0, 0, 0, 0.4),
+      inset -5px -5px 5px rgba(255, 255, 255, 0.2),
+      inset 10px 10px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .loader:before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+    z-index: 10;
+    background: #212121;
+    border-radius: 50%;
+    border: 2px solid #292929;
+    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.2),
+      inset 3px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .loader span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: linear-gradient(
+      -225deg,
+      #e7dbd0 0%,
+      #a19b63 50%,
+      #3d3d33 100%
+    );
+    filter: blur(20px);
+    z-index: -1;
+    animation: animate 0.5s linear infinite, hue 3s linear infinite;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes hue {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+  
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+
+  /* From Uiverse.io by Javierrocadev */ 
+.container2 {
+    width: 100%;
+    height: 100%;
+    /* Add your background pattern here */
+    background-image: repeating-radial-gradient(  #0c0a0a 80%,#2f312f 90%,#3f4549 90%);
+    background-size: 65px 65px;
+  }
 
 .tour-gallery{
     display: grid;
