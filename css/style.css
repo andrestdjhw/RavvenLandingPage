@@ -26,6 +26,10 @@ nav {
   z-index: 1000;
 }
 
+#checkbox{
+    display: none;
+}
+
 .brand-logo {
   height: 50px;
   width: auto;
@@ -300,3 +304,74 @@ footer {
   text-align: center;
   margin-top: 40px;
 }
+
+@media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Oculta las nav-links por defecto */
+      position: absolute;
+      top: 60px; /* Ajusta la posición vertical */
+      left: 0;
+      width: 100%;
+      background-color: #000;
+      flex-direction: column; /* Ordena los elementos verticalmente */
+      padding: 20px;
+      z-index: 1000;
+    }
+  
+    .nav-links li {
+      margin-bottom: 10px;
+    }
+  
+    .menu-toggle {
+      display: block; /* Muestra el menu-toggle en dispositivos móviles */
+      cursor: pointer;
+    }
+  
+    .bars {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: #fff;
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    /* Estilos para el checkbox */
+    #checkbox:checked ~ .nav-links {
+      display: flex; /* Muestra el menú cuando el checkbox está marcado */
+    }
+  
+    /* Estilos para las barras del menú */
+    #checkbox:checked ~ .menu-toggle .bars:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+  
+    #checkbox:checked ~ .menu-toggle .bars:nth-child(2) {
+      opacity: 0;
+    }
+  
+    #checkbox:checked ~ .menu-toggle .bars:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+
+  /* ... (tu CSS actual) ... */
+
+/* Navigation (Responsive) */
+@media (max-width: 768px) {
+    /* ... (tu CSS para modo móvil) ... */
+    .menu-toggle {
+      display: block; /* Muestra el menu-toggle en dispositivos móviles */
+      cursor: pointer;
+    }
+  
+    /* ... (tu CSS para el checkbox) ... */
+  }
+  
+  /* Ocultar el checkbox en modo escritorio */
+  @media (min-width: 769px) { 
+    .menu-toggle {
+      display: none; /* Oculta el menu-toggle en pantallas grandes */
+    }
+  }
+  
