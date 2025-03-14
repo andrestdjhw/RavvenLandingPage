@@ -1,0 +1,12 @@
+# Ignorar archivos de entorno
+.env
+
+# Ignorar directorios
+/node_modules/
+/dist/
+
+# Ignorar archivos específicos
+*.log
+*.tmp
+#Ignorar Live Server de vscode
+/.vscode/
